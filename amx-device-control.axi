@@ -3,6 +3,8 @@ program_name='amx-device-control'
 #if_not_defined __AMX_DEVICE_CONTROL__
 #define __AMX_DEVICE_CONTROL__
 
+#disable_warning 10608
+
 define_constant
 
 char cMasterControlVersion[] = 'v1.0.0'
