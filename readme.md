@@ -109,13 +109,13 @@ All control functions have a DEV parameter. This makes **amx-device-library** ex
 
 amx-device-control
 ---------------
-#####Dependencies:
+##### Dependencies:
 + none
 
-#####Description: 
+##### Description: 
 Contains functions for controlling the various components of an AMX device (e.g., channels, levels, strings, commands).
 
-#####Usage:
+##### Usage:
 Include **amx-device-control** into the main program using the `#include` compiler directive. E.g:
 
 	#include 'amx-device-control'
@@ -139,13 +139,13 @@ and call the function(s) defined within **amx-device-control** from the main pro
 
 amx-controlports-api
 -----------
-#####Dependencies:
+##### Dependencies:
 + none
 
-#####Description:
+##### Description:
 Contains constants for AMX Control ports (serial, relays, IR, IO) NetLinx command headers and parameter values. These are used extensively by the accompanying library files **amx-controlports-control** and **amx-controlports-listener**. The constants defined within **amx-controlports-api** can also be referenced when passing values to control functions (where function parameters have a limited allowable set of values for one or more parameters) or checking to see the values of the callback function parameters.
 
-#####Usage:
+##### Usage:
 Include **amx-controlports-api** into the main program using the `#include` compiler directive. E.g:
 
 	#include 'amx-controlports-api'
@@ -155,14 +155,14 @@ NOTE: If the main program file includes **amx-controlports-control** and/or **am
 
 amx-controlports-control
 ----------------
-#####Dependencies:
+##### Dependencies:
 + amx-device-control
 + amx-controlports-api
 
-#####Description:
+##### Description:
 Contains functions for configuring the various control ports of an AMX device (serial, relays, IR, IO).
 
-#####Usage:
+##### Usage:
 Include **amx-controlports-control** into the main program using the `#include` compiler directive. E.g:
 
 	#include 'amx-controlports-control'
@@ -183,10 +183,10 @@ and call the function(s) defined within **amx-controlports-control** from the ma
 
 amx-controlports-listener
 ----------------
-#####Dependencies:
+##### Dependencies:
 + amx-controlports-api
 
-#####Description:
+##### Description:
 Contains dev arrays for listening to traffic returned from the AMX control ports (serial, relays, IR, IO).
 
 You should copy the required dev arrays to their main program and instantiate them with dev values corresponding to the control ports you wish to listen to.
@@ -195,7 +195,7 @@ Contains commented out callback functions and events required to capture informa
 
 Callback functions may be triggered from both unprompted data and responses to requests for information.
 
-#####Usage:
+##### Usage:
 Include **amx-controlports-listener** into the main program using the `#include` compiler directive. E.g:
 
 	#include 'amx-controlports-listener'
@@ -251,7 +251,7 @@ paste the callback function and `#define` statement into the main program file, 
 
 The callback function will be automatically triggered whenever a change occurs on the AMX control port (that initiates an unsolicted feedback response) or a response to a request for information is received.
 
-###IMPORTANT!
+### IMPORTANT!
 1. The `#define` compiler directive found directly above the callback function within **amx-controlports-listener** must also be copied to the main program and uncommented along with the callback function itself.
 
 2. Due to the way the NetLinx compiler scans the program for `#define` staments **amx-controlports-listener** must be included in the main program file underneath any callback functions and associated `#define` statements or the callback functions will not trigger.
