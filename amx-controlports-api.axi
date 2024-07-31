@@ -54,6 +54,7 @@ char IR_COMMAND_TURN_OFF_DEVICE_BASED_ON_IO_LINK_STATUS[]              = 'POF'
 char IR_COMMAND_TURN_ON_DEVICE_BASED_ON_IO_LINK_STATUS[]               = 'PON'
 char IR_COMMAND_DURATION_ON_TIME_POWER_PULSES[]                        = 'PTON'
 char IR_COMMAND_DURATION_OFF_TIME_BETWEEN_POWER_PULSES[]               = 'PTOF'
+char IR_COMMAND_FAULT_DETECT[] 					       = 'SET FAULT DETECT ';
 
 char IO_COMMAND_INPUT_ACTIVE_STATE_REQUEST[]   = 'GET INPUT '
 char IO_COMMAND_INPUT_ACTIVE_STATE_CONFIGURE[] = 'SET INPUT '
@@ -125,6 +126,8 @@ char IR_STOP_BITS_2[]   = '2'
 char IR_MODE_SERIAL[]   = 'SERIAL'
 char IR_MODE_DATA[]     = 'DATA'
 char IR_MODE_IR[]       = 'IR'
+char IR_MODE_ON[] 	= 'ON';
+char IR_MODE_OFF[] 	= 'OFF';
 
 char IR_PATTERN_MODE_0[] = '0'   // Example: [x][x]<x><enter> (3 transmitted as 3-enter, 34 transmitted as 3-4-enter, 345 transmitted as 3-4-5-enter)
 char IR_PATTERN_MODE_1[] = '1'   // Example: <x><x><x><enter> (3 transmitted as 0-0-3-enter, 34 transmitted as 0-3-4-enter, 345 transmitted as 3-4-5-enter)
@@ -141,6 +144,28 @@ char IR_CARRIER_DISABLED[] = 'NO CARRIER'
 
 char IO_ACTIVE_STATE_LOW[]  = 'ACTIVE LOW'
 char IO_ACTIVE_STATE_HIGH[] = 'ACTIVE HIGH'
+
+
+/*
+ * --------------------
+ * AMX Telnet System Constants 
+ * --------------------
+ */
+
+integer TELNET_CONNECT_WAIT_TIME	= 10
+integer TELNET_DISCONNECT_WAIT_TIME	= 5
+slong TELNET_CLIENT_STATUS_CONNECTED 	= 258
+slong TELNET_CLIENT_STATUS_DISCONNECTED = 1
+
+long TELNET_ERROR_GENERAL_FAILURE	= 2
+long TELNET_ERROR_UNKNOWN_HOST		= 4
+long TELNET_ERROR_CONNECTION_REFUSED	= 6
+long TELNET_ERROR_CONNECTION_TIMEOUT	= 7
+long TELNET_ERROR_UNKNOWN_ERROR		= 8
+long TELNET_ERROR_ALREADY_CLOSED	= 9
+long TELNET_ERROR_LOCAL_PORT_ALREADY_USED = 14
+long TELNET_ERROR_TOO_MANY_OPEN_SOCKETS = 16
+long TELNET_ERROR_LOCAL_PORT_NOT_OPEN 	= 17
 
 
 #end_if
